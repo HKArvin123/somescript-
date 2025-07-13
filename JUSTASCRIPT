@@ -1,16 +1,23 @@
 #!/bin/sh
 
+##Setup chinese###
+printf "Setting up chinese\n"
+echo 'zh_TW.UTF-8 UTF-8' >> /etc/locale.gen
+locale-gen
+echo "LANG=zh_TW.UTF-8" > /etc/locale.conf
+
 
 printf "[Info] Install need package."
 sudo apt update
 sudo apt upgrade
 sudo dpkg --add-architecture armhf
 sudo apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf
-sudo apt install sudo zsh
-
+sudo apt install sudo zsh xfce4 xfce4-goodies dbus-x11
 
 
 ##Setup##
+cd /etc/zsh/
+wget -O zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 printf "Root password.\n"
 passwd root
 printf "Add a user.\n"
@@ -18,9 +25,7 @@ read -p "User name:" URN
 useradd -m -g users -G wheel,audio,video,storage -s /bin/zsh $URN
 printf "User password.\n"
 passwd $URN
-rm /etc/sudoers
-echo 'root ALL=(ALL:ALL)ALL' > /etc/sudoers
-echo '$URN ALL=(ALL:ALL)ALL' > /etc/sudoers
+visudo
 su $URN
 
 ##Clone Box86/64##
