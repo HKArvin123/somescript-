@@ -8,11 +8,11 @@ echo "LANG=zh_TW.UTF-8" > /etc/locale.conf
 
 
 printf "[Info] Install need package."
-sudo apt update
-sudo apt upgrade
-sudo dpkg --add-architecture armhf
-sudo apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf -y
-sudo apt install sudo zsh xfce4 xfce4-goodies dbus-x11 openssh fakeroot -y
+apt update
+apt upgrade
+dpkg --add-architecture armhf
+apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf -y
+apt install sudo zsh xfce4 xfce4-goodies dbus-x11 openssh fakeroot -y
 
 
 ##Setup##
