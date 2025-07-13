@@ -1,0 +1,14 @@
+
+printf "[Info] 安裝 proot-distro\n"
+sleep 1
+pkg install proot-distro
+
+printf "[Info] 安裝 debian\n"
+sleep 1
+proot-distro install debian
+
+printf "[Info] 進入debian容器"
+proot-distro login debian  --shared-tmp -- bash -c ""
+
+
+
