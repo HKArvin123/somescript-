@@ -4,6 +4,7 @@ sleep 1
 pkg install proot-distro
 pkg install x11-repo
 pkg install termux-x11-nightly pulseaudio vim  mesa-zink virglrenderer-mesa-zink vulkan-loader-android 
+curl -O https://raw.githubusercontent.com/HKArvin123/somescript-/refs/heads/main/2
 
 
 printf "[Info] 安裝 debian\n"
