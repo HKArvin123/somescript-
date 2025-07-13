@@ -2,6 +2,8 @@
 printf "[Info] 安裝 proot-distro\n"
 sleep 1
 pkg install proot-distro
+pkg install x11-repo
+pkg install termux-x11-nightly
 
 printf "[Info] 安裝 debian\n"
 sleep 1
