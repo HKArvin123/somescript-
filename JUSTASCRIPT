@@ -21,7 +21,7 @@ wget -O zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 printf "Root password.\n"
 passwd root
 printf "Add a user.\n"
-useradd -m -g users -G wheel,audio,video,storage -s /bin/zsh debian
+useradd -m -g users -G wheel -s /bin/zsh debian
 printf "User password.\n"
 passwd debian
 visudo
