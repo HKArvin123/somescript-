@@ -1,0 +1,52 @@
+#!/bin/sh
+
+
+printf "[Info] Install need package."
+sudo apt update
+sudo apt upgrade
+sudo dpkg --add-architecture armhf
+sudo apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf
+sudo apt install sudo zsh
+
+
+
+##Setup##
+printf "Root password.\n"
+passwd root
+printf "Add a user.\n"
+read -p "User name:" URN
+useradd -m -g users -G wheel,audio,video,storage -s /bin/zsh $URN
+printf "User password.\n"
+passwd $URN
+rm /etc/sudoers
+echo 'root ALL=(ALL:ALL)ALL' > /etc/sudoers
+echo '$URN ALL=(ALL:ALL)ALL' > /etc/sudoers
+su $URN
+
+##Clone Box86/64##
+printf "cloning box64 and box86\n"
+cd ~
+mkdir work
+cd work
+git clone https://github.com/ptitSeb/box86.git
+git clone https://github.com/ptitSeb/box64.git
+
+##Build Box86##
+printf "Building box86"
+cd box86
+mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DARM_DYNAREC=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
+make -j$(nproc)
+sudo make install
+cd ..
+printf "done\n"
+##END##
+
+##Build Box64##
+printf "building box64\n"
+cd box64
+mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DARM_DYNAREC=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
+make -j$(nproc)
+sudo make install
+cd ..
+printf "done\n"
+##END##
