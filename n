@@ -1,4 +1,4 @@
-
+#!/data/data/com.termux/files/usr/bin/bash
 printf "[Info] 安裝 proot-distro\n"
 sleep 1
 pkg install proot-distro
@@ -7,8 +7,8 @@ printf "[Info] 安裝 debian\n"
 sleep 1
 proot-distro install debian
 
-printf "[Info] 進入debian容器"
-proot-distro login debian  --shared-tmp -- bash -c 'bash -c "$(curl -fsSL  )"'
+printf "[Info] 進入debian容器\n"
+proot-distro login debian  --shared-tmp -- bash -c 'bash -c "$(curl -fsSL raw.githubusercontent.com/HKArvin123/somescript-/refs/heads/main/JUSTASCRIPT)"'
 
 
 
