@@ -11,8 +11,8 @@ printf "[Info] Install need package."
 sudo apt update
 sudo apt upgrade
 sudo dpkg --add-architecture armhf
-sudo apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf
-sudo apt install sudo zsh xfce4 xfce4-goodies dbus-x11
+sudo apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf -y
+sudo apt install sudo zsh xfce4 xfce4-goodies dbus-x11 openssh fakeroot -y
 
 
 ##Setup##
@@ -55,3 +55,10 @@ sudo make install
 cd ..
 printf "done\n"
 ##END##
+
+
+
+####Install Steam######
+printf "[Info] Install Steam\n"
+cd box86
+bash install_steam.sh
