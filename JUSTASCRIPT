@@ -21,12 +21,11 @@ wget -O zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 printf "Root password.\n"
 passwd root
 printf "Add a user.\n"
-read -p "User name:" URN
-useradd -m -g users -G wheel,audio,video,storage -s /bin/zsh $URN
+useradd -m -g users -G wheel,audio,video,storage -s /bin/zsh debian
 printf "User password.\n"
-passwd $URN
+passwd debian
 visudo
-su $URN
+su debian
 
 ##Clone Box86/64##
 printf "cloning box64 and box86\n"
