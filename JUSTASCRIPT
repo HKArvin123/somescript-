@@ -12,7 +12,7 @@ apt update
 apt upgrade
 dpkg --add-architecture armhf
 apt install git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf mesa*:armhf -y
-apt install sudo zsh xfce4 xfce4-goodies dbus-x11 fakeroot -y
+apt install sudo zsh xfce4 xfce4-goodies dbus-x11 ssh fakeroot -y
 
 
 ##Setup##
