@@ -40,7 +40,7 @@ printf "Building box86"
 cd box86
 mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DARM_DYNAREC=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
 make -j$(nproc)
-sudo make install
+make install
 cd ..
 printf "done\n"
 ##END##
@@ -50,7 +50,7 @@ printf "building box64\n"
 cd box64
 mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DARM_DYNAREC=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
 make -j$(nproc)
-sudo make install
+make install
 cd ..
 printf "done\n"
 ##END##
