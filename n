@@ -13,6 +13,7 @@ sleep 1
 proot-distro install debian
 
 printf "[Info] 進入debian容器\n"
+sleep 1
 proot-distro login debian  --shared-tmp -- bash -c 'bash -c "$(curl -fsSL raw.githubusercontent.com/HKArvin123/somescript-/refs/heads/main/JUSTASCRIPT)"'
 
 
