@@ -1,7 +1,7 @@
 #!/bin/sh
 
-##Setup chinese###
-printf "Setting up chinese\n"
+printf "Setting up language.(eng,zh)\n"
+printf "不建議使用zh_HK，翻譯不全。\n"
 echo 'zh_TW.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
 echo "LANG=zh_TW.UTF-8" > /etc/locale.conf
