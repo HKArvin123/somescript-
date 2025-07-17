@@ -61,3 +61,10 @@ printf "done\n"
 printf "[Info] Install Steam\n"
 cd box86
 bash install_steam.sh
+
+
+
+
+
+printf "[Info] Installed\n"
+
