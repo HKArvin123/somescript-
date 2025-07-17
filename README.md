@@ -10,3 +10,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/HKArvin123/somescript-/ref
 
 
 * 未經測試
+
+* 未完成
