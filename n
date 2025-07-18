@@ -18,4 +18,6 @@ sleep 1
 proot-distro login debian  --shared-tmp --isolated -- bash -c 'bash -c "$(curl -fsSL raw.githubusercontent.com/HKArvin123/somescript-/refs/heads/main/JUSTASCRIPT)"'
 
 
+proot-distro login debian --user debian --shared-tmp --isolated -- bash -c "curl -fsSL raw.githubusercontent.com/HKArvin123/somescript-/refs/heads/main/installbox"
+
 
