@@ -20,6 +20,8 @@ printf "Root password.\n"
 passwd root
 printf "Add a user.\n"
 useradd -m -g users -G wheel -s /bin/zsh debian
-visudo
+rm -fr /etc/sudoers
+echo 'root    ALL=(ALL:ALL) ALL' > /etc/sudoers
+echo 'debian ALL=(ALL:ALL) ALL' >> /etc/sudoers
 
 printf "[Info] type exit to exit\n"
