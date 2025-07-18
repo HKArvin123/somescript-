@@ -19,4 +19,4 @@ virgl_test_server_android &
 printf "[Info] Launching xfce4 desktop\n"
 sleep 1
 
-proot-distro login debian --user debian --shared-tmp -- bash -c "export DISPLAY=:0 PULSE_SERVER=tcp:127.0.0.1; dbus-launch --exit-with-session startxfce4"
+proot-distro login debian --user debian --shared-tmp --isolated -- bash -c "export DISPLAY=:0 PULSE_SERVER=tcp:127.0.0.1; dbus-launch --exit-with-session startxfce4"
