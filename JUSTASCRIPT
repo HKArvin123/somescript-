@@ -16,8 +16,6 @@ apt install sudo zsh xfce4 xfce4-goodies dbus-x11 ssh fakeroot -y
 
 
 ##Setup##
-cd /etc/zsh/
-wget -O zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 printf "Root password.\n"
 passwd root
 printf "Add a user.\n"
